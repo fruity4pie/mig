@@ -22,6 +22,7 @@ a
 		max-width: 945px
 		width: 100%
 		margin: 0 auto
+		padding: 0 15px
 
 h1
 	font: 700 50px/60px Ubuntu
@@ -158,6 +159,7 @@ strong
 	max-width: 1170px
 	width: 100%
 	padding: 10px 0 0 0
+	z-index: 1
 	.logo
 		margin-right: 60px
 	.phone
@@ -268,7 +270,7 @@ strong
 				&:hover
 					background: #fff
 					&:after, a
-						color: #3468ea
+						color: #3468ea !important
 					& .head-nav2-sub2
 						display: block
 			&2
@@ -283,7 +285,7 @@ strong
 				display: none
 				li
 					a
-						color: #3468ea
+						color: #3468ea !important
 	.dropdown
 		color: #ffffff
 		font: 700 12px/30px Ubuntu
@@ -297,25 +299,77 @@ strong
 		cursor: pointer
 		display: none
 		&-btn
-			display: block
-			width: 30px
-			height: 2px
-			background-color: #ffffff
+			display: flex
+			flex-flow: column nowrap
+			width: 100%
+			height: 100%
 			cursor: pointer
-			position: absolute
-			top: 50%
-			translate: transform(0, -50%)
-			&:before, &:after
-				content: ''
-				position: absolute
+			justify-content: space-between
+			span
 				display: block
 				width: 30px
 				height: 2px
-				background: #fff
-			&:before
-				top: -10px
-			&:after
-				bottom: -10px
+				background-color: #ffffff
+		&__wrap
+			padding-top: 25px
+			position: fixed
+			z-index: 5
+			top: 0
+			left: -100%
+			height: 100vh
+			background: #4569d0
+			cursor: auto
+			max-width: 270px
+			transition: all .3s
+			&.active
+				left: 0
+		&__h
+			padding: 0 25px 0 15px
+			display: flex
+			flex-flow: row nowrap
+			justify-content: space-between
+			align-items: center
+			margin-bottom: 10px
+			span
+				display: block
+				width: 24px
+				height: 24px
+				position: relative
+				z-index: 6
+				cursor: pointer
+				&:before, &:after
+					content: ''
+					position: absolute
+					display: block
+					background: #fff
+					height: 2px
+					width: 24px
+					top: 50%
+					transform: translate(0,-50%)
+				&:before
+					transform: rotate(45deg)
+				&:after
+					transform: rotate(135deg)
+		&__c
+			& > li
+				padding-left: 30px
+				&.active
+					padding-top: 13px
+					padding-bottom: 9px
+					background: #3055a0
+				&:not(:last-child)
+					margin-bottom: 25px
+				& > a
+					text-transform: uppercase
+					font: 700 14px/18px Ubuntu
+					letter-spacing: 1.4px
+				& > ul
+					display: none
+					li
+						&:not(:last-child)
+							margin-bottom: 10px
+					a
+						font-size: 12px
 	.m-phone
 		display: none
 		height: 30px
@@ -430,7 +484,6 @@ strong
 				text-decoration: underline
 				font-weight: 500
 	.mob-c-1
-		margin: 0 auto
 		.owl-dots
 			text-align: center
 		button
@@ -526,6 +579,19 @@ strong
 				position: absolute
 				left: 55px
 				bottom: 27px
+	.mob-c-3
+		.owl-dots
+			text-align: center
+		button
+			width: 10px
+			height: 10px
+			background-color: #4569d0
+			border-radius: 50%
+			opacity: .5
+			&:not(:last-child)
+				margin-right: 10px
+			&.active
+				opacity: 1
 
 .freedom
 	padding: 40px 0 60px
@@ -766,10 +832,24 @@ strong
 			display: none
 	.work-b-h
 		min-height: 148px
-		padding-right: 29px
+		padding-right: 20px
 		h6
 			line-height: 24px
 			font-weight: 500
+	.mob-c-2
+		margin: 0 auto
+		.owl-dots
+			text-align: center
+		button
+			width: 10px
+			height: 10px
+			background-color: #4569d0
+			border-radius: 50%
+			opacity: .5
+			&:not(:last-child)
+				margin-right: 10px
+			&.active
+				opacity: 1
 
 .youtube
 	padding: 50px 0 45px
@@ -998,6 +1078,51 @@ strong
 				position: relative
 				left: 50%
 				transform: translate(-50%,0)
+	.mob-tabs2
+		display: none
+		&-a
+			border: 2px solid #ecf1f4
+			position: relative
+			&:before, &:after
+				content: ''
+				display: block
+				position: absolute
+				top: 50%
+				transform: translate(0, -50%)
+				background-color: #818790
+			&:before
+				width: 18px
+				height: 2px
+				right: 20px
+			&:after
+				height: 18px
+				width: 2px
+				right: 28px
+			&.active
+				display: block
+				a
+					color: #2d5acc
+				&:after
+					display: none
+			a
+				display: block
+				padding: 15px 0 15px 15px
+		&-c
+			border-left: 2px solid #ecf1f4
+			border-right: 2px solid #ecf1f4
+			border-bottom: 1px solid #ecf1f4
+			position: relative
+			padding: 15px 0 170px 15px
+			display: none
+			&.active
+				display: block
+			img
+				position: absolute
+				max-width: 133px
+				width: 100%
+				height: auto
+				right: 10px
+				bottom: 0
 
 .email
 	background: #f1f5f9

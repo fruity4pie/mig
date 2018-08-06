@@ -108,6 +108,8 @@
 					&:first-child
 						.popular-b-h
 							padding: 0
+		.mob-c-1
+			margin: 0 auto
 
 	.exp
 		padding: 35px 0 60px
@@ -120,34 +122,161 @@
 
 	.cases
 		padding: 25px 0
+		.row
+			&:first-child
+				margin-bottom: 35px
+			&:nth-child(2)
+				margin-bottom: 20px
 		h2
 			margin-bottom: 10px
+		p
+			font-size: 14px
+			font-weight: 300
+			line-height: 18px
 		&-b
+			margin-bottom: 15px
 			&-h
+				img
+					height: 200px
 				.t-b
 					left: 20px
 					bottom: 20px
 					p
 						font: 700 18px/24px Ubuntu
 						max-width: 275px
+			&-c
+				padding: 30px 0px 30px 100px
+				p
+					font-size: 13px
+					letter-spacing: 0
+					&:before
+						font-size: 14px
+						left: -85px
+				a
+					margin-left: -45px
+		.mob-c-3
+			margin: 0 auto
 
 	.freedom
+		padding: 20px 0 0
+		h2
+			margin-bottom: 10px
 		.row
 			&:not(:nth-child(-n+2))
 				display: none
+			&:first-child
+				margin-bottom: 30px
+			&:nth-child(2)
+				margin-bottom: 0
+		&-b
+			&-h
+				.t-b
+					left: 20px
+					div
+						font-size: 14px
+						span
+							font-weight: 300
+						strong
+							span
+								font-weight: 500
+			&-c
+				padding: 30px 0 30px 19px
+				h5
+					font-size: 16px
+					display: block
+					&:after
+						right: 20px
+				ul
+					font-size: 12px
+
+	.with-us
+		padding: 30px 0 40px
+		.row
+			&:first-child
+				margin-bottom: 30px
+		&-b
+			h3
+				font-size: 18px
+				line-height: 24px
+				margin-bottom: 5px
+			p
+				&:last-of-type
+					margin-bottom: 20px
+
+	.cast
+		padding: 40px 0 20px
+		.row
+			&:first-child
+				margin-bottom: 20px
+		h4
+			font-size: 16px
+			line-height: 24px
+		.work-b
+			margin-bottom: 15px
 
 	.youtube
+		padding: 20px 0 30px
 		.row
 			&:nth-child(2)
 				text-align: center
 		.v
 			display: none
+		.yv
+			margin-bottom: 30px
+			iframe
+				height: 156px
+		h5
+			font-size: 13px
+			margin-bottom: 20px
 
 	.media
+		padding: 25px 0 30px
+		p
+			margin-bottom: 20px
 		nav, .tab-content
 			display: none
 		.mob-tabs
 			display: block
+			a
+				font: 700 13px Ubuntu
+		.owl-flex
+			img
+				max-height: 30px
+				height: 100%
+				width: 70%
+
+	.risks
+		padding: 30px 0 50px
+		.row
+			&:nth-child(2)
+				margin: 0
+		.col-6
+			&:not(:last-child)
+				margin-bottom: 30px
+		&-b
+			p
+				&:first-child
+					font-size: 36px
+					line-height: 24px
+					margin-bottom: 15px
+			p
+				font-size: 14px
+				line-height: 18px
+		.btn
+			max-width: 268px
+			font-size: 12px
+			letter-spacing: 2.4px
+
+	.faces
+		padding: 30px 0
+		.row
+			&:first-child
+				margin-bottom: 40px
+			&:nth-child(2)
+				margin-bottom: 0
+		p
+			font-size: 13px
+			line-height: 18px
 
 	.with-us
 		&2
@@ -163,6 +292,47 @@
 			input
 				&:not(:last-of-type)
 					margin-bottom: 10px
+
+	.world
+		padding: 35px 0 30px
+		p
+			font-size: 14px
+			line-height: 18px
+		nav, .tab-content
+			display: none
+		.mob-tabs2
+			display: block
+			&-a
+				a
+					font: 700 13px/20px Ubuntu
+					text-transform: uppercase
+					letter-spacing: 1.3px
+					color: #000
+					&.active
+						color: #2d5acc
+			&-c
+				h5
+					font-size: 18px
+					font-weight: 700
+					margin-bottom: 12px
+				p
+					margin: 0
+					font-size: 14px
+					font-weight: 400
+					&:first-of-type
+						max-width: 148px
+				.t-b
+					position: absolute
+					left: 20px
+					bottom: 10px
+					h4
+						text-align: right
+						font-size: 16px
+						font-weight: 500
+					p
+						max-width: none
+						font-size: 12px
+						font-weight: 300
 
 	.email
 		padding: 20px 0 0
@@ -207,4 +377,11 @@
 						&:nth-of-type(2)
 							margin-bottom: 15px
 
-// @media screen and (max-width: 480px)
+@media screen and (max-width: 480px)
+	.popular
+		.col-md-6
+			padding: 0
+
+	.cases
+		.col-xl-6
+			padding: 0
