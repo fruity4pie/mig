@@ -10,24 +10,25 @@ $(document).ready(function() {
   })
 
   if( $(window).width() < 481 ) {
-    showCarousels();
+    showCarousels('.mob-c-1', '.mob-c-2', '.mob-c-3');
   } else {
-    $('.mob-c-1').removeClass('owl-carousel');
+    stopCarousel('.mob-c-1', '.mob-c-2', '.mob-c-3');
   }
 
   $(window).resize(function() {
     if ( $(window).width() < 481 ) {
-      showCarousels();
-      $('.mob-c-1').addClass('owl-carousel');
+      showCarousels('.mob-c-1', '.mob-c-2', '.mob-c-3');
     } else {
-      stopCarousel();
+      stopCarousel('.mob-c-1', '.mob-c-2', '.mob-c-3');
     }
   });
 
-  function stopCarousel() {
-    var owl = $('.mob-c-1');
-    owl.trigger('destroy.owl.carousel');
-    owl.removeClass('owl-carousel');
+  function stopCarousel(...args) {
+    for(let i = 0; i < args.length; i++) {
+      i = $(`${args[i]}`);
+      i.trigger('destroy.owl.carousel');
+      i.removeClass('owl-carousel');
+    }
   }
 
   $('.owlc1').owlCarousel({
@@ -105,47 +106,22 @@ $(document).ready(function() {
     popUp.removeClass('active');
   })
 
-  function showCarousels() {
-    $('.mob-c-1').owlCarousel({
-      loop: true,
-      responsiveClass: true,
-      nav: false,
-      dots: true,
-      autoHeight:true,
-      responsive:{
-        0:{
-          items:1,
+  function showCarousels(...args) {
+    for(let i = 0; i < args.length; i++) {
+      i = $(`${args[i]}`).owlCarousel({
+        loop: true,
+        responsiveClass: true,
+        nav: false,
+        dots: true,
+        autoHeight:true,
+        responsive:{
+          0:{
+            items:1,
+          }
         }
-      }
-    })
-
-    $('.mob-c-2').owlCarousel({
-      loop: true,
-      responsiveClass: true,
-      center: true,
-      margin: 10,
-      nav: false,
-      dots: true,
-      responsive:{
-        0:{
-          items:1,
-        }
-      }
-    })
-
-    $('.mob-c-3').owlCarousel({
-      loop: true,
-      responsiveClass: true,
-      center: true,
-      margin: 10,
-      nav: false,
-      dots: true,
-      responsive:{
-        0:{
-          items:1,
-        }
-      }
-    })
+      })
+      i.addClass('owl-carousel');
+    }
   }
 
 })

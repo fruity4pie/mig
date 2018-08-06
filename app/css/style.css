@@ -11922,17 +11922,36 @@ strong {
     max-width: 902px;
     width: 100%; }
     .head-nav2 li > a {
-      color: #ffffff;
+      color: #ffffff !important;
       font: 700 12px/30px Ubuntu;
-      letter-spacing: 1.2px; }
+      letter-spacing: 1.2px;
+      position: relative;
+      text-transform: uppercase; }
       .head-nav2 li > a:hover ~ ul {
         display: block; }
+    .head-nav2 > li > a {
+      padding-bottom: 10px; }
+      .head-nav2 > li > a:before {
+        content: '';
+        width: 0;
+        height: 3px;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        top: -17px;
+        display: block;
+        -webkit-transition: all .3s;
+        transition: all .3s; }
+      .head-nav2 > li > a:hover:before {
+        width: 100%; }
     .head-nav2-sub {
       display: none;
       position: absolute;
       background: #3468ea;
       max-width: 277px;
       width: 100%; }
+      .head-nav2-sub:hover {
+        display: block; }
       .head-nav2-sub li {
         position: relative; }
         .head-nav2-sub li a {
@@ -11959,7 +11978,7 @@ strong {
         width: 100%;
         position: absolute;
         top: 0;
-        right: -100%;
+        left: 100%;
         background: #fff;
         font: 400 12px/38px Ubuntu;
         letter-spacing: 0.6px;

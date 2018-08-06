@@ -221,17 +221,35 @@ strong
 		width: 100%
 		li
 			& > a
-				color: #ffffff
+				color: #ffffff !important
 				font: 700 12px/30px Ubuntu
 				letter-spacing: 1.2px
+				position: relative
+				text-transform: uppercase
 				&:hover ~ ul
 					display: block
+		& > li > a
+			padding-bottom: 10px
+			&:before
+				content: ''
+				width: 0
+				height: 3px
+				background: #fff
+				position: absolute
+				left: 0
+				top: -17px
+				display: block
+				transition: all .3s
+			&:hover:before
+					width: 100%
 		&-sub
 			display: none
 			position: absolute
 			background: #3468ea
 			max-width: 277px
 			width: 100%
+			&:hover
+				display: block
 			li
 				position: relative
 				a
@@ -258,7 +276,7 @@ strong
 				width: 100%
 				position: absolute
 				top: 0
-				right: -100%
+				left: 100%
 				background: #fff
 				font: 400 12px/38px Ubuntu
 				letter-spacing: 0.6px
