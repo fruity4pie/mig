@@ -1,0 +1,19 @@
+{
+  "name": "myproject",
+  "description": "My first gulp project",
+  "main": "index.js",
+  "authors": [
+    "fruity4pie"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "jquery": "*",
+    "reset-css": "*",
+    "font-awesome": "*",
+    "owl.carousel": "*"
+  }
+}
