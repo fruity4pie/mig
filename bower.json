@@ -7,13 +7,12 @@
   ],
   "license": "ISC",
   "homepage": "",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "jquery": "*",
     "reset-css": "*",
     "font-awesome": "*",
-    "owl.carousel": "*"
+    "owl.carousel": "*",
+    "popper.js": "^1.14.4"
   }
 }
