@@ -12022,8 +12022,9 @@ strong {
       display: none; }
 
 .header {
-  padding: 310px 0 245px;
-  background: url("../img/headerbg.jpg") no-repeat center/cover #000; }
+  background: url("../img/headerbg.jpg") no-repeat center/cover #000;
+  height: 100vh;
+  padding: 30vh 0 17.8vh; }
   .header h1, .header p {
     color: #fff; }
   .header h1 {
@@ -12589,13 +12590,36 @@ strong {
     color: #9299a2;
     font: 300 16px Ubuntu;
     margin: 0; }
-  .media .mob-tabs-a {
-    padding: 15px 0 15px 20px;
-    border: 1px solid #ecf1f4; }
-  .media .mob-tabs-c {
-    display: block; }
-    .media .mob-tabs-c .active {
+  .media .mob-tabs {
+    display: none; }
+    .media .mob-tabs-a {
+      border: 1px solid #ecf1f4; }
+      .media .mob-tabs-a a {
+        display: block;
+        padding: 15px 0 15px 20px;
+        position: relative; }
+        .media .mob-tabs-a a:after, .media .mob-tabs-a a:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translate(0, -50%);
+                  transform: translate(0, -50%);
+          background-color: #818790; }
+        .media .mob-tabs-a a:before {
+          right: 30px;
+          width: 2px;
+          height: 20px; }
+        .media .mob-tabs-a a:after {
+          right: 20px;
+          width: 20px;
+          height: 2px; }
+        .media .mob-tabs-a a.active:before {
+          display: none; }
+    .media .mob-tabs-c {
       display: none; }
+      .media .mob-tabs-c.active {
+        display: block; }
 
 .risks {
   background: url("../img/planetbg.png") no-repeat center bottom #f1f5f9;
@@ -13061,18 +13085,15 @@ strong {
     font-size: 20px;
     font-weight: 300;
     line-height: 24px; }
-  .header {
-    height: 100vh;
-    padding: 25vh 0 17.8vh; }
-    .header h1 {
-      color: #ffffff;
-      font: 700 24px/30px Ubuntu;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      margin-bottom: 30px; }
-    .header p {
-      color: #ffffff;
-      font: 300 14px/20px Ubuntu; }
+  .header h1 {
+    color: #ffffff;
+    font: 700 24px/30px Ubuntu;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px; }
+  .header p {
+    color: #ffffff;
+    font: 300 14px/20px Ubuntu; }
   .work {
     padding: 30px 0 35px; }
     .work .row:first-child {
@@ -13118,6 +13139,10 @@ strong {
     text-align: center; }
   .youtube .v {
     display: none; }
+  .media nav, .media .tab-content {
+    display: none; }
+  .media .mob-tabs {
+    display: block; }
   .with-us2 {
     padding: 45px 0 40px; }
     .with-us2 .row:first-child {
@@ -13166,7 +13191,3 @@ strong {
         margin-bottom: 20px; }
       .pre-footer .row .col-md-6:nth-child(4) p:nth-of-type(2) {
         margin-bottom: 15px; } }
-
-@media screen and (max-width: 480px) {
-  .media nav, .media .tab-content {
-    display: none; } }

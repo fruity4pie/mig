@@ -314,8 +314,9 @@ strong
 			display: none
 
 .header
-	padding: 310px 0 245px
 	background: url('../img/headerbg.jpg') no-repeat center/cover #000
+	height: 100vh
+	padding: 30vh 0 17.8vh
 	h1, p
 		color: #fff
 	h1
@@ -839,13 +840,35 @@ strong
 			font: 300 16px Ubuntu
 			margin: 0
 	.mob-tabs
+		display: none
 		&-a
-			padding: 15px 0 15px 20px
 			border: 1px solid #ecf1f4
+			a
+				display: block
+				padding: 15px 0 15px 20px
+				position: relative
+				&:after, &:before
+					content: ''
+					display: block
+					position: absolute
+					top: 50%
+					transform: translate(0, -50%)
+					background-color: #818790
+				&:before
+					right: 30px
+					width: 2px
+					height: 20px
+				&:after
+					right: 20px
+					width: 20px
+					height: 2px
+				&.active
+					&:before
+						display: none
 		&-c
-			display: block
-			.active
-				display: none
+			display: none
+			&.active
+				display: block
 
 .risks
 	background: url('../img/planetbg.png') no-repeat center bottom #f1f5f9

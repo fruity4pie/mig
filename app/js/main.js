@@ -33,6 +33,7 @@ $(document).ready(function() {
   $('.owlc1').owlCarousel({
     loop:true,
     responsiveClass:true,
+    dots: false,
     margin: 0,
     responsive:{
       0:{
@@ -45,6 +46,17 @@ $(document).ready(function() {
         items:4,
       },
     }
+  })
+
+  //MobileTabs
+  let tabsAnch = $('.mob-tabs-a a');
+  let prev;
+
+  tabsAnch.on('click', function(e){
+    e.preventDefault();
+    $(this).parent().parent().parent().find('a').removeClass('active');
+    $(this).toggleClass('active');
+    $(this).parent().parent().parent().find('.mob-tabs-c').has('active') ? $(this).toggleClass('active').parent().siblings('.mob-tabs-c').toggleClass('active') : $(this).parent().siblings('.mob-tabs-c').toggleClass('active');
   })
 
   $('.owlc2').owlCarousel({
