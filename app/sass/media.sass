@@ -9,10 +9,46 @@
 			&-h
 				min-width: 90px
 
-@media screen and (max-width: 1139px)
 	.cases-b
+		margin-bottom: 35px
 		&-c
-			min-height: 470px
+			min-height: auto
+			padding-bottom: 30px
+			a
+				position: relative
+				left: auto
+				bottom: auto
+
+	.info
+		&-b
+			flex-flow: column nowrap
+			&__t, &__r
+				margin-right: 0
+
+	.divider
+		&-b
+			display: none
+
+	.tb
+		margin: 0 auto
+		// tr
+		// 	th, td
+		// 		&:last-child
+		// 			display: none
+
+	.comp-r
+		.row
+			overflow-x: auto
+			overflow-y: hidden
+
+@media screen and (max-width: 1139px)
+	.header
+		&-uslugi
+			.t-b
+				justify-content: space-around
+				p
+					&:not(:last-child)
+						margin-bottom: 10px
 
 @media screen and (max-width: 1100px)
 	.head
@@ -36,13 +72,9 @@
 		font-size: 28px
 
 @media screen and (max-width: 991px)
-	.cases-b
-		margin-bottom: 35px
-		&-c
-			min-height: auto
-			padding-bottom: 30px
-			a
-				position: static
+	.header
+		&-uslugi-anch
+			display: none
 
 	.freedom-b
 		margin-bottom: 30px
@@ -60,6 +92,80 @@
 			&:first-child
 				margin-bottom: 35px
 
+	.pre-footer
+		.col-lg-3
+			.pre-footer-b
+					margin-bottom: 15px
+			&:last-child
+				.pre-footer-c, .pre-footer-b
+					align-items: flex-start
+					text-align: left
+				.pre-footer-h, .pre-footer-b
+					text-align: left
+				.socials
+					margin: 0 auto 55px 0
+
+	.cond
+		.t-c
+			padding: 20px 40px 40px 20px
+
+	.inv
+		.t-b
+			&__h, &__f
+				padding: 30px 25px
+				h4
+					font-size: 16px
+					line-height: 20px
+
+	.cost
+		.frm
+			select, input
+				max-width: none
+
+	.blog
+		.row
+			.col-lg-3
+				order: -1
+		&-a
+			&__adv
+				display: none
+
+	.steps, .key
+		padding: 60px 0
+
+	.stage8
+		padding: 50px 0
+
+	.story
+		.row
+			&:nth-child(1)
+				margin-bottom: 25px
+			&:nth-child(2)
+				.col-lg-5
+					.story-t
+						padding-top: 0
+		&-t
+			h3
+				max-width: none
+			h4
+				margin-bottom: 20px
+			p, ul
+				margin-bottom: 15px
+
+	.b-blog
+		.main-content-article
+			blockquote
+				&::before
+					top: 0
+					left: 0
+				&::after
+					right: 0
+					bottom: 0
+
+	.comp
+		&-r
+			padding: 50px 0
+
 @media screen and (max-width: 767px)
 	h2
 		font-size: 20px
@@ -69,7 +175,7 @@
 	.header
 		h1
 			color: #ffffff
-			font: 700 24px/30px Ubuntu
+			font: 700 22px/30px Ubuntu
 			text-transform: uppercase
 			letter-spacing: 4px
 			margin-bottom: 30px
@@ -96,6 +202,13 @@
 			&-c
 				p
 					font-weight: 300
+		&-aus
+			.row
+				&:last-child
+					.col-md-12
+						&:not(:last-child)
+							.work-b
+								margin-bottom: 90px
 
 	.popular
 		padding: 40px 0 25px
@@ -119,14 +232,20 @@
 		p
 			line-height: 18px
 			margin-bottom: 50px
+		&-uslugi
+			padding: 35px 0
+			p
+				margin-bottom: 30px
+			.cond-l
+				padding: 0
 
 	.cases
 		padding: 25px 0
 		.row
 			&:first-child
-				margin-bottom: 35px
+				margin-bottom: 30px
 			&:nth-child(2)
-				margin-bottom: 20px
+				margin-bottom: 25px
 		h2
 			margin-bottom: 10px
 		p
@@ -152,17 +271,22 @@
 					&:before
 						font-size: 14px
 						left: -85px
-				a
-					margin-left: -45px
 		.mob-c-3
 			margin: 0 auto
+		&2
+			.cases-b
+				&-c
+					padding-left: 0
+					a
+						display: block
+						margin: 0 auto
 
 	.freedom
 		padding: 20px 0 0
 		h2
 			margin-bottom: 10px
 		.row
-			&:not(:nth-child(-n+2))
+			&:not(:nth-child(-n+3))
 				display: none
 			&:first-child
 				margin-bottom: 30px
@@ -224,7 +348,7 @@
 		.yv
 			margin-bottom: 30px
 			iframe
-				height: 156px
+				height: 190px
 		h5
 			font-size: 13px
 			margin-bottom: 20px
@@ -241,7 +365,6 @@
 				font: 700 13px Ubuntu
 		.owl-flex
 			img
-				max-height: 30px
 				height: 100%
 				width: 70%
 
@@ -298,7 +421,7 @@
 		p
 			font-size: 14px
 			line-height: 18px
-		nav, .tab-content
+		.world__nav, .map
 			display: none
 		.mob-tabs2
 			display: block
@@ -343,7 +466,7 @@
 			font-size: 14px
 		.row
 			&:nth-child(1)
-				margin-bottom: 10px
+				margin-bottom: 20px
 		&-b
 			padding: 0
 			p
@@ -377,6 +500,210 @@
 						&:nth-of-type(2)
 							margin-bottom: 15px
 
+	.benefits
+		padding: 35px 0
+		.row
+			&:first-child
+				margin-bottom: 40px
+		&-l
+			p
+				font: 300 16px/24px Ubuntu
+		figcaption
+			display: flex
+			flex-flow: column nowrap
+			align-items: center
+			span
+				&:first-child
+					margin: 0 0 15px 0
+
+	.cond
+		padding: 40px 0
+		.row
+			&:first-child
+				margin-bottom: 35px
+		&-l
+			li
+				&:not(:last-child)
+					margin-bottom: 10px
+		.t-b
+			margin-bottom: 25px
+
+	.inv
+		padding: 35px 0
+		.t-b
+			margin-bottom: 15px
+
+	.cost
+		padding: 35px 0
+		.row
+			&:first-child
+				margin-bottom: 40px
+
+	.real
+		padding: 40px 0
+
+	.facts
+		padding: 40px 0
+		&-t
+			&__i
+				padding: 0
+				&.active
+					padding-bottom: 25px
+				h4
+					font-size: 16px
+					padding-right: 40px
+					&:after
+						height: 15px
+						width: 2px
+						right: 7px
+					&:before
+						width: 15px
+						height: 2px
+						right: 0
+
+	.btn
+		&-wrapper
+			a
+				&:first-child
+					margin-bottom: 15px
+
+	.blog
+		&-c
+			flex-flow: column nowrap
+			&__img
+				margin: 0 0 15px 0
+				flex: 0 1 auto
+		&-a
+			ul
+				li
+					a
+						line-height: 30px
+
+	.b-blog
+		iframe
+			height: 200px
+		&-adv1
+			flex-flow: column
+			img
+				display: none
+			h4
+				text-align: center
+				font-size: 22px
+		&-e
+			margin-bottom: 25px
+		.main-content-article
+			padding-top: 25px
+			.dataTables_wrapper
+				margin-bottom: 25px
+			.head-div
+				margin-bottom: 20px
+			blockquote
+				padding: 4% 15% 10% 20px
+				&::before, &::after
+					display: none
+				cite
+					right: 10px
+
+	.soc-rating
+		&-h
+			flex-flow: column nowrap
+			margin-bottom: 20px
+			.info-text
+				p
+					text-indent: 0
+					text-align: left
+			.info-data
+				margin-bottom: 20px
+
+	.s-art
+		margin-bottom: 20px
+
+	.info
+		padding: 40px 0
+		&-b
+			padding: 15px 0
+			&__b
+				flex-flow: column nowrap
+				a
+					margin: 0
+					&:first-of-type
+						margin-bottom: 10px
+
+	.divider, .conc
+		padding: 35px 0
+
+	.conc
+		&-b
+			&__i
+				&:not(:last-child)
+					margin-bottom: 25px
+
+	.stage
+		&-alert, &-costs
+			padding: 40px 15px 35px 35px
+
+	.reviews
+		padding: 35px 0
+		&-b
+			&__i
+				flex-flow: column nowrap
+				&:not(:last-child)
+					margin-bottom: 35px
+			&__h
+				flex-flow: row wrap
+			&__img
+				width: 162px
+				align-self: center
+				margin-bottom: 15px
+			&__loc
+				margin: 0 auto
+			h4
+				margin-bottom: 10px
+			p
+				&:first-of-type
+					margin-bottom: 20px
+
+	.story
+		padding: 40px 0
+
+	.tb
+		tbody
+			td
+				&:first-child
+					font-size: 11px
+					line-height: 17px
+					padding: 18px 0
+
+	.tb
+		margin: 0 auto
+		tr
+			th, td
+				&:nth-last-child(2), &:nth-last-child(3)
+					display: none
+
+	.comp
+		&-h
+			&-rub
+				padding-bottom: 10px
+				margin-bottom: 10px
+				&__i
+					a
+						padding: 0
+					.childs-list
+						display: block
+						height: 0
+						padding: 0
+						overflow: hidden
+						transition: all .3s
+						top: calc(100% + 10px)
+						& > *
+							display: none
+						&.active
+							height: auto
+							padding: 15px 20px
+							& > *
+								display: block
+
 @media screen and (max-width: 480px)
 	.popular
 		.col-md-6
@@ -385,3 +712,32 @@
 	.cases
 		.col-xl-6
 			padding: 0
+		&3
+			.row
+				&:nth-child(3)
+					margin-bottom: 30px
+
+	.btn
+		font-size: 11px
+
+	.popup
+		.free-c
+			height: 100vh
+			padding: 0 30px
+			justify-content: center
+
+	.stage
+		.mob-c-1
+			margin: 0 auto
+
+@media screen and (max-width: 400px)
+	.cases
+		&-b
+			a
+				left: -65px
+
+@media screen and (min-width: 320px) and (max-width: 850px) and (orientation: landscape)
+	.youtube
+		.yv
+			iframe
+				height: 90vh

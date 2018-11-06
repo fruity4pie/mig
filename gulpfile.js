@@ -51,6 +51,7 @@ gulp.task('scripts', function() {
   return gulp.src([ // Берем все необходимые библиотеки
     'app/libs/jquery/dist/jquery.js',
     'app/libs/owl.carousel/dist/owl.carousel.js',
+    'app/libs/fancybox/dist/jquery.fancybox.js',
 		'app/js/main.js'
 		])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js

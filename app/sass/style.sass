@@ -8,6 +8,9 @@
 body
 	color: #000
 	font: 400 16px/1 Ubuntu
+	overflow-x: hidden
+	&.active
+		overflow: hidden
 
 a
 	&:hover
@@ -18,6 +21,7 @@ a
 	width: 100%
 	margin: 0 auto
 	padding: 0 15px
+	position: relative
 	&_945
 		max-width: 945px
 		width: 100%
@@ -53,9 +57,24 @@ strong
 	letter-spacing: 2.6px
 	display: inline-block
 	border-radius: 0
+	justify-content: center
 	&:hover
 		color: #1f1f1f
 		background: #d6d333
+	&360
+		max-width: 360px
+		&_emp
+			max-width: 360px
+			background: transparent
+			border: 2px solid #ffffff
+			color: #ffffff
+			font: 700 13px/36px Ubuntu
+			text-transform: uppercase
+			letter-spacing: 2.6px
+			&:hover
+				background: red
+				color: #fff
+				border-color: red
 	&183
 		width: 183px
 		height: 46px
@@ -69,6 +88,8 @@ strong
 		transition: all .3s
 		&:hover
 			background: #d6d333
+	&200
+		max-width: 200px
 	&201
 		width: 201px
 		height: 38px
@@ -83,10 +104,35 @@ strong
 			text-decoration: none
 			color: #fff
 			background: #1F414E
+		&_blue
+			background-color: #3468e8
+			text-transform: none
+			&:hover
+				background-color: #1458e1
+		&_30
+			height: 30px
+			line-height: 30px
+	&207
+		display: inline-block
+		width: 207px
+		height: 25px
+		background-color: #97a8ae
+		color: #ffffff
+		font: 700 14px/25px Ubuntu
+		transition: all .3s
+		&:hover
+			background: #62a8ae
+			color: #fff
 	&225
 		max-width: 225px
 		height: 45px
 		line-height: 30px
+	&251
+		max-width: 251px
+		height: 45px
+		line-height: 30px
+	&302
+		max-width: 302px
 	&-y
 		max-width: 282px
 		width: 100%
@@ -114,6 +160,16 @@ strong
 			text-decoration: none
 			color: #fff
 			background: #bf1111
+		&201
+			max-width: 201px
+			font: 700 12px/30px Ubuntu
+			text-transform: none
+			letter-spacing: 1.2px
+			height: 30px
+			&:before
+				width: 16px
+				height: 11px
+				left: 15px
 	&a
 		width: 225px
 		height: 45px
@@ -128,9 +184,17 @@ strong
 			color: #1f1f1f
 			text-decoration: none
 			background: #b7b7b7
-
-.owl-carousel .owl-nav.disabled
-	display: block
+	&-wrapper
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-around
+	&-blue
+		background-color: #3468e8
+		color: #ffffff
+		font: 700 12px/36px Ubuntu
+		text-transform: none
+		letter-spacing: 1.2px
+		width: 200px
 
 .owl-prev, .owl-next
 	top: 42%
@@ -159,9 +223,12 @@ strong
 	max-width: 1170px
 	width: 100%
 	padding: 10px 0 0 0
-	z-index: 1
+	z-index: 10
 	.logo
 		margin-right: 60px
+		svg
+			height: 40px
+			width: auto
 	.phone
 		margin-left: auto
 		color: #ffffff
@@ -219,7 +286,7 @@ strong
 		img
 			margin-right: 5px
 	&-nav2
-		max-width: 902px
+		max-width: 1000px
 		width: 100%
 		li
 			& > a
@@ -227,9 +294,9 @@ strong
 				font: 700 12px/30px Ubuntu
 				letter-spacing: 1.2px
 				position: relative
-				text-transform: uppercase
+				cursor: pointer
 				&:hover ~ ul
-					display: block
+					display: flex
 		& > li > a
 			padding-bottom: 10px
 			&:before
@@ -248,50 +315,80 @@ strong
 			display: none
 			position: absolute
 			background: #3468ea
-			max-width: 277px
 			width: 100%
+			flex-flow: row nowrap
+			left: 0
+			padding: 20px 0 20px 20px
 			&:hover
-				display: block
+				display: flex
 			li
 				position: relative
 				a
 					padding-left: 15px
 					display: block
-					height: 100%
 			& > li
-				&:after
-					content: '\276F'
-					color: #fff
-					font-size: 12px
-					position: absolute
-					top: 50%
-					transform: translate(0,-50%)
-					right: 17px
-				&:hover
-					background: #fff
-					&:after, a
-						color: #3468ea !important
-					& .head-nav2-sub2
+				transition: all .3s
+				margin-right: 15px
+				& > a
+					color: #77b7ff !important
+					font: 300 12px/18px Ubuntu
+					text-transform: uppercase
+					letter-spacing: 1.2px
+					max-width: 165px
+					padding-bottom: 20px
+					position: relative
+					min-height: 56px
+			& > li.has-submenu-class
+				& > a
+					&::after
+						content: ""
+						position: absolute
+						bottom: 0
 						display: block
+						width: 100%
+						height: 1px
+						background-color: #ffffff
+						opacity: 0.17
 			&2
 				max-width: 195px
 				width: 100%
-				position: absolute
-				top: 0
-				left: 100%
-				background: #fff
-				font: 400 12px/38px Ubuntu
 				letter-spacing: 0.6px
-				display: none
+				display: flex
+				flex-flow: column nowrap
+				padding-top: 20px
+				.strong-menu
+					font-weight: 700
 				li
+					transition: all .3s
 					a
-						color: #3468ea !important
+						color: #fff
+						font: 300 12px/36px Ubuntu
+						position: relative
+						display: inline-block
+						overflow: hidden
+						&:before
+							content: ''
+							display: block
+							width: 0
+							height: 2px
+							background: #fff
+							transition: all .3s
+							position: absolute
+							bottom: 0
+						&:hover:before
+							width: 100%
 	.dropdown
 		color: #ffffff
 		font: 700 12px/30px Ubuntu
 		text-transform: uppercase
+		&-menu
+			min-width: 40px
+			padding: 0
+		&-item
+			padding: 5px
 		a
 			color: inherit
+			text-align: center
 	.m-burg
 		height: 22px
 		width: 33px
@@ -310,19 +407,30 @@ strong
 				width: 30px
 				height: 2px
 				background-color: #ffffff
-		&__wrap
+		&__sub
 			padding-top: 25px
 			position: fixed
 			z-index: 5
 			top: 0
 			left: -100%
 			height: 100vh
-			background: #4569d0
 			cursor: auto
-			max-width: 270px
+			width: 100%
 			transition: all .3s
 			&.active
 				left: 0
+		&__wrap
+			padding-top: 25px
+			position: absolute
+			z-index: 5
+			top: 0
+			left: 0
+			height: 100vh
+			cursor: auto
+			max-width: 270px
+			background: #002632
+			&.active
+				overflow-y: auto
 		&__h
 			padding: 0 25px 0 15px
 			display: flex
@@ -352,43 +460,148 @@ strong
 					transform: rotate(135deg)
 		&__c
 			& > li
-				padding-left: 30px
-				&.active
-					padding-top: 13px
-					padding-bottom: 9px
-					background: #3055a0
-				&:not(:last-child)
-					margin-bottom: 25px
 				& > a
 					text-transform: uppercase
 					font: 700 14px/18px Ubuntu
 					letter-spacing: 1.4px
+					display: block
+					padding: 7px 0 7px 30px
+					&.active
+						background: #001d26
+						margin-bottom: 10px
+						& ~ ul
+							display: block
 				& > ul
 					display: none
+					padding-left: 30px
+					padding-right: 20px
+					margin-bottom: 20px
 					li
 						&:not(:last-child)
 							margin-bottom: 10px
 					a
 						font-size: 12px
+						line-height: 18px
+					& > li
+						& > a
+							opacity: .4
 	.m-phone
 		display: none
 		height: 30px
 		width: 30px
 		border: 1px solid #ffffff
-		flex-flow: row nowrap
-		justify-content: center
-		align-items: center
 		cursor: pointer
-		span
+		&__open
 			color: #fff
 			transform: rotate(110deg)
+			width: 100%
+			height: 100%
+			display: flex
+			flex-flow: row nowrap
+			justify-content: center
+			align-items: center
+		&__sub
+			position: fixed
+			top: 0
+			right: -100%
+			z-index: 5
+			width: 100%
+			height: 100vh
+			transition: all .3s
+			z-index: 10
+			cursor: auto
+			&.active
+				right: 0
 		&__wrap
-			display: none
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 5
+			background: #002632
+			width: 100%
+		&__h
+			display: flex
+			flex-flow: row nowrap
+			justify-content: flex-end
+			padding: 20px 14px 0 0
+			span
+				display: block
+				width: 24px
+				height: 24px
+				position: relative
+				cursor: pointer
+				&:before, &:after
+					content: ''
+					position: absolute
+					width: 24px
+					height: 2px
+					background: #fff
+					top: 50%
+					transform: translate(0, -50%)
+				&:before
+					transform: rotate(45deg)
+				&:after
+					transform: rotate(135deg)
+		&__c
+			padding: 0 0 45px 20px
+			h5
+				color: #ffffff
+				font: 700 16px/18px Ubuntu
+				text-transform: uppercase
+				letter-spacing: 1.6px
+				margin-bottom: 40px
+		&__nav
+			li
+				display: flex
+				flex-flow: row nowrap
+				align-items: center
+				&:not(:last-child)
+					margin-bottom: 15px
+				&:last-child
+					display: flex
+					flex-flow: row nowrap
+				&:nth-last-child(2)
+					margin-bottom: 30px
+				div
+					&:not(:last-child)
+						margin-right: 40px
+				a
+					color: #ffffff
+					font: 700 14px Ubuntu
+					letter-spacing: 0.7px
+				img
+					margin-right: 10px
 
 .header
-	background: url('../img/headerbg.jpg') no-repeat center/cover #000
 	height: 100vh
-	padding: 30vh 0 17.8vh
+	padding: 20vh 0 17.8vh
+	overflow: hidden
+	position: relative
+	.cnt
+		position: static
+	.row
+		z-index: 3
+		position: relative
+	&-video
+		&-bg
+			position: absolute
+			min-width: 100%
+			min-height: 100%
+			display: block
+			top: 0
+			left: 0
+			background: rgba(0, 0, 0, .65)
+			z-index: 2
+		video
+			min-width: 100%
+			min-height: 100%
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 1
+			pointer-events: none
 	h1, p
 		color: #fff
 	h1
@@ -399,6 +612,126 @@ strong
 		margin-bottom: 35px
 	strong
 		color: #fff
+	&-uslugi
+		background: url('../img/uslugibg.jpg') no-repeat center/cover #000
+		position: relative
+		height: auto
+		h1
+			letter-spacing: 2px
+		.t-b
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+		p
+			margin: 0
+			color: #ffffff
+			font: 700 20px/30px Ubuntu
+			position: relative
+			span
+				font-size: 18px
+				color: #71b023
+				margin-right: 10px
+		.row
+			.col-lg-10
+				margin-bottom: 60px
+		&-anch
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			background-color: #3468e8
+			opacity: 0.8
+			&.fixed
+				position: fixed
+				top: 0
+				bottom: auto
+				opacity: 1
+				z-index: 15
+			&__row
+				display: flex
+				flex-flow: row wrap
+				justify-content: space-between
+				align-items: center
+			&__item
+				text-align: center
+				max-width: 140px
+				a
+					color: #ffffff
+					font: 700 12px/18px Ubuntu
+					text-transform: uppercase
+					letter-spacing: 1.2px
+					transition: all .3s
+					position: relative
+					height: 90px
+					display: flex
+					flex-flow: row nowrap
+					align-items: center
+					justify-content: center
+					&:before
+						content: ''
+						position: absolute
+						height: 3px
+						background: #fff45e
+						display: block
+						top: 0
+						left: 0
+						width: 0
+						transition: all .3s
+					&:hover
+						color: yellow
+					&:hover:before
+						width: 100%
+	&-news
+		background: url('../img/newsbg.jpg') no-repeat center/cover #000
+		height: auto
+	&-news2
+		background: url('../img/news2bg.jpg') no-repeat center/cover #000
+		height: auto
+		padding: 160px 0 42px
+		time
+			opacity: 0.5
+			color: #ffffff
+			font: 300 14px/15px Ubuntu
+	&-cont
+		background: url('../img/contactsbg.jpg') no-repeat center/cover #000
+	&-aus
+		background: url('../img/onasbg.jpg') no-repeat center/cover #000
+	&-case1
+		background: url('../img/pass.jpg') no-repeat center/cover #274650
+		padding: 20vh 0 17.8vh
+		h1
+			margin-bottom: 15px
+		.header-uslugi-anch
+			&__row
+				justify-content: center
+				a
+					min-width: 160px
+		p
+			font-weight: 300þ
+			letter-spacing: .5px
+	&-clients
+		background: url('../img/klients.png') no-repeat center/cover #fff
+	&404
+		background: url('../img/404.png') no-repeat center/cover #002632
+		p
+			color: #ffffff
+			font: 300 16px/30px Ubuntu
+	&-comp
+		background: url('../img/comp.png') no-repeat center/cover #000
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			display: block
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			background-color: #002632
+			opacity: .4
+		p
+			color: #ffffff
+			font: 700 20px/30px Ubuntu
 
 .work
 	padding: 60px 0 80px
@@ -407,7 +740,7 @@ strong
 		margin-bottom: 10px
 	p
 		color: #1f1f1f
-		font: 700 24px/24px Ubuntu
+		font: 400 24px/24px Ubuntu
 	.row
 		counter-reset: s
 		&:first-child
@@ -415,9 +748,7 @@ strong
 	&-b
 		position: relative
 		z-index: 2
-		&:before
-			counter-increment: s
-			content: '0'counter(s)
+		.count-steps
 			position: absolute
 			color: #dae3e8
 			font: 700 72px/24px Ubuntu
@@ -439,33 +770,75 @@ strong
 		strong
 			font-weight: 500
 			text-decoration: underline
+	&-uslugi
+		p
+			color: #676f7a
+			font: 300 16px/24px Ubuntu
+		.work
+			&-b
+				&-h
+					padding: 20px 40px 24px 20px
+					max-height: 85px
+					h6
+						text-transform: uppercase
+				&-c
+					padding: 20px 15px 0 20px
+					p
+						color: #1f1f1f
+						font: 300 14px/24px Ubuntu
+	&-aus
+		padding: 55px 0 15px
+		.work-b
+			margin-bottom: 80px
+			&-h
+				min-height: 105px
+				padding-right: 20px
+
+.b-c
+	display: flex
+	flex-flow: row wrap
+	margin-bottom: 20px
+	li
+		position: relative
+		&:not(:last-child)
+			margin-right: 25px
+			&:before
+				content: '/'
+				position: absolute
+				right: -15px
+				color: #ffffff
+				opacity: 0.5
+				font-size: 13px
+	a, span
+		color: #ffffff !important
+		opacity: 0.7
+		font: 400 13px/15px Ubuntu
+	span
+		text-decoration: underline
 
 .popular
 	background: #ecf1f4
 	padding: 65px 0 70px
 	h2
-		margin-bottom: 20px
+		margin-bottom: 50px
 	.row
 		&:nth-child(2)
 			& .col-xl-4
 				min-height: 300px
 				margin-bottom: 25px
-				&:nth-child(1), &:nth-child(2), &:nth-child(4), &:nth-child(6)
-					.popular-b-h
-						padding-right: 50px
-				&:nth-child(5)
-					.popular-b-h
-						padding-right: 100px
 	&-b
 		background: #fff
 		padding: 30px
 		height: 100%
+		border-radius: 3px
+		border: 1px solid #e0e2e3
 		&-h
 			margin-bottom: 30px
 			h6
 				color: #2d5acc
 				font: 700 19px/24px Ubuntu
 				position: relative
+				min-height: 72px
 				&:before
 					content: ''
 					display: block
@@ -482,7 +855,7 @@ strong
 				font: 300 14px/24px Ubuntu
 			strong
 				text-decoration: underline
-				font-weight: 500
+				font-weight: 700
 	.mob-c-1
 		.owl-dots
 			text-align: center
@@ -496,6 +869,37 @@ strong
 				margin-right: 10px
 			&.active
 				opacity: 1
+	&-uslugi
+		.row
+			&:first-child
+				margin-bottom: 40px
+		p
+			color: #676f7a
+			font: 300 16px/24px Ubuntu
+		.popular-b
+			padding: 29px
+			&-h
+				padding: 0 !important
+			&-c
+				p
+					color: #1f1f1f
+					font: 300 14px/24px Ubuntu
+				strong
+					text-decoration: none
+				a
+					text-decoration: underline
+				ul
+					li
+						font: 300 14px/24px Ubuntu
+						position: relative
+						&:before
+							content: '-'
+							position: relative
+							margin-right: 2px
+					a
+						font: 300 14px/24px Ubuntu
+						color: #2d5acc
+						text-decoration: underline
 
 .exp
 	background: url('../img/expbg.png') no-repeat #002632
@@ -511,8 +915,25 @@ strong
 	.img-c
 		position: relative
 		img
+			pointer-events: none
 			position: absolute
 			left: -50px
+	&-uslugi
+		p
+			margin-bottom: 10px
+		ul
+			padding-left: 30px
+			margin-bottom: 40px
+			li
+				color: #fff
+				position: relative
+				&:before
+					content: '•'
+					color: #2d5acc
+					position: relative
+					left: -2px
+				&:not(:last-child)
+					margin-bottom: 10px
 
 .cases
 	padding: 95px 0 40px
@@ -530,8 +951,16 @@ strong
 	&-b
 		&-h
 			position: relative
+			&:before
+				content: ''
+				width: 100%
+				height: 100%
+				display: block
+				position: absolute
+				background-color: rgba(0, 38, 50, 0.82)
 			img
 				width: 100%
+				max-height: 289px
 			.t-b
 				position: absolute
 				bottom: 40px
@@ -542,6 +971,7 @@ strong
 					letter-spacing: 1.6px
 					margin-bottom: 30px
 					position: relative
+					text-transform: uppercase
 					&:after
 						content: ""
 						position: absolute
@@ -556,12 +986,15 @@ strong
 					color: #ffffff
 					font: 700 24px/30px Ubuntu
 		&-c
-			padding: 30px 85px 0 155px
+			padding: 30px 50px 30px 155px
 			border-radius: 3px
 			border-left: 1px solid #ecf1f4
 			border-right: 1px solid #ecf1f4
 			border-bottom: 1px solid #ecf1f4
-			min-height: 407px
+			min-height: 265px
+			display: flex
+			flex-flow: column nowrap
+			justify-content: space-between
 			p
 				color: #676f7a
 				font: 300 14px/23px Ubuntu
@@ -576,9 +1009,8 @@ strong
 				&:not(:last-child)
 					margin-bottom: 20px
 			a
-				position: absolute
-				left: 55px
-				bottom: 27px
+				position: relative
+				left: -110px
 	.mob-c-3
 		.owl-dots
 			text-align: center
@@ -592,8 +1024,32 @@ strong
 				margin-right: 10px
 			&.active
 				opacity: 1
+	&2
+		.cases-b
+			&-c
+				padding: 30px 0 30px 45px
+				min-height: auto
+				a
+					position: relative
+					left: auto
+					bottom: auto
+	&3
+		.row
+			&:nth-child(2)
+				margin-bottom: 35px
+		padding: 60px 0 90px
+		.cases-b
+			margin-bottom: 30px
+			a
+				bottom: auto
+		.benefits-l
+			margin-bottom: 30px
+			span
+				margin-right: 5px
+				color: #71b023
 
 .freedom
+	background: #ecf1f4
 	padding: 40px 0 60px
 	.row
 		&:nth-child(1)
@@ -616,6 +1072,14 @@ strong
 	&-b
 		&-h
 			position: relative
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				background: rgba(18, 38, 49, .65)
 			img
 				width: 100%
 				height: 100%
@@ -674,9 +1138,19 @@ strong
 						top: 1px
 		&2
 			flex: 0 1 300px
+			&:not(:last-child)
+				margin-bottom: 25px
 			&-h
 				margin-bottom: -3px
 				position: relative
+				&:before
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					background: rgba(18, 38, 49, .65)
 			img
 				width: 100%
 			h5
@@ -698,6 +1172,10 @@ strong
 				font: 400 22px/30px Ubuntu
 	strong
 		color: #fff
+	.hidden-block
+		display: none
+		&.active
+			display: block
 
 .with-us
 	background: url('../img/withusbg.jpg') no-repeat center #000
@@ -761,6 +1239,8 @@ strong
 		a
 			position: relative
 			z-index: 3
+		strong
+			color: #fff
 	&2
 		background: url('../img/wu2.jpg') no-repeat center/cover #000
 		padding: 52px 0 77px
@@ -819,6 +1299,55 @@ strong
 				bottom: -70px
 				h5
 					margin-bottom: 20px
+	&-uslugi
+		.row p
+			margin: 0
+	&3
+		background: url('../img/wu3.jpg') no-repeat center/cover #fff
+	&4
+		padding: 55px 0 35px
+		background: url('../img/gren.png') no-repeat center/cover #294241
+		.row
+			&:first-child
+				margin-bottom: 55px
+		p
+			&:first-of-type
+				color: #ffffff
+				font: 400 18px/30px Ubuntu
+				margin-bottom: 30px
+			&:last-of-type
+				color: #ffffff
+				font: 300 16px/24px Ubuntu
+				margin-bottom: 30px
+		.t-b
+			position: relative
+			bottom: auto
+			right: auto
+			h4
+				color: #ffffff
+				font: 700 21px/24px Ubuntu
+				margin-bottom: 5px
+			p
+				color: #ffffff
+				font: 400 14px/18px Ubuntu
+				max-width: 400px
+		&:after
+			display: none
+		img
+			bottom: -35px
+	&-cases
+		padding: 100px 0
+		.row
+			&:first-child
+				margin-bottom: 0
+		h2
+			color: #ffffff
+			font: 500 30px/36px Ubuntu
+			margin-bottom: 35px
+		p
+			margin-bottom: 30px
+		img
+			bottom: -100px
 
 .cast
 	padding: 75px 0 50px
@@ -828,11 +1357,13 @@ strong
 		&:first-child
 			margin-bottom: 70px
 	.work-b
+		height: 100%
 		&:before
 			display: none
 	.work-b-h
-		min-height: 148px
+		min-height: 165px
 		padding-right: 20px
+		height: 100%
 		h6
 			line-height: 24px
 			font-weight: 500
@@ -852,6 +1383,7 @@ strong
 				opacity: 1
 
 .youtube
+	background: #ecf1f4
 	padding: 50px 0 45px
 	h2
 		margin-bottom: 20px
@@ -876,14 +1408,17 @@ strong
 		justify-content: space-between
 		margin-bottom: 25px
 		&-item
-			flex: 0 1 225px
+			flex: 0 1 205px
 			height: 110px
 			margin-bottom: 20px
-			iframe
-				height: 100%
+			img
+				max-width: 225px
+				height: auto
+				width: 100%
 
 .media
-	padding: 50px 0 150px
+	background: #ecf1f4
+	padding: 35px 0 150px
 	h2
 		margin-bottom: 15px
 	p
@@ -904,7 +1439,7 @@ strong
 			font: 700 12px Ubuntu
 			text-transform: uppercase
 			letter-spacing: 1.2px
-			&:not(last-child)
+			&:not(:last-child)
 				margin-right: 40px
 			&:hover
 				border: none
@@ -913,6 +1448,7 @@ strong
 				color: #2d5acc
 				border: none
 				position: relative
+				background: transparent
 				&:after
 					content: ''
 					position: absolute
@@ -933,6 +1469,8 @@ strong
 			display: inline-block
 			width: auto
 			margin-bottom: 15px
+			max-width: 175px
+			max-height: 100px
 		p
 			color: #9299a2
 			font: 300 16px Ubuntu
@@ -945,6 +1483,8 @@ strong
 				display: block
 				padding: 15px 0 15px 20px
 				position: relative
+				text-transform: uppercase
+				color: #000000
 				&:after, &:before
 					content: ''
 					display: block
@@ -961,6 +1501,7 @@ strong
 					width: 20px
 					height: 2px
 				&.active
+					color: #2d5acc
 					&:before
 						display: none
 		&-c
@@ -1009,14 +1550,20 @@ strong
 	&-b
 		margin-bottom: 30px
 		&-img
-			margin-bottom: -2px
+			max-width: 220px
+			width: 100%
+			height: 190px
+			margin: 0 auto 5px
 			img
 				width: 100%
-				height: 100%
+				min-height: 190px
+				max-height: 190px
+				border-radius: 50%
 		&-c
-			padding: 20px 30px 25px 23px
+			padding: 20px 30px 15px 23px
 			border-radius: 3px
 			border: 2px solid #ecf1f4
+			min-height: 275px
 			h5
 				color: #000000
 				font: 700 18px/20px Ubuntu
@@ -1031,7 +1578,7 @@ strong
 
 .world
 	background: #fff
-	padding: 80px 0 30px
+	padding: 80px 0 100px
 	overflow: hidden
 	h2
 		margin-bottom: 20px
@@ -1040,44 +1587,121 @@ strong
 		font: 300 16px/24px Ubuntu
 		max-width: 520px
 		margin: 0 auto 40px
-	.nav
-		margin-bottom: 60px
-		&-tabs
-			border: none
-			display: flex
-			flex-flow: row nowrap
-			text-align: center
-			overflow-x: scroll
-			overflow-y: hidden
-		&-link
-			border: none
-			color: #000000
-			font: 700 13px Ubuntu
-			text-transform: uppercase
-			letter-spacing: 1.3px
-			padding: 0
+	&__nav
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-between
+		max-width: 750px
+		width: 100%
+		margin: 0 auto 60px
+		position: relative
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			left: 0
+			bottom: -20px
+			width: 100%
+			height: 2px
+			background-color: #ecf1f4
+		& > li
+			position: relative
 			&:not(:last-child)
 				margin-right: 40px
-			&.active
-				color: #3365e2
-				background: none
-				position: relative
-				&:after
-					content: ''
-					display: block
-					width: 100%
-					height: 3px
-					background-color: #2d5acc
-					position: absolute
-					left: 0
-					bottom: -20px
-	.tab
-		&-content
+		& > li > a
+			color: #000000
+			font: 700 13px Ubuntu
+			letter-spacing: 1.2px
+			text-transform: uppercase
+			transition: all .3s
 			position: relative
+			padding-bottom: 25px
+			&:hover
+				color: #3365e2
+			&:hover ~ ul
+				display: block
+		&-h
+			display: none
+			position: absolute
+			left: -10px
+			width: 160px
+			top: calc(100% + 20px)
+			background: rgb(52, 104, 232)
+			z-index: 2
+			&:hover
+				display: block
+			li
+				transition: all .3s
+				&:hover
+					background: #577bd6
+			a
+				color: #ffffff
+				font: 400 12px Ubuntu
+				letter-spacing: 1.2px
+				display: block
+				padding: 10px 0 10px 10px
+	.map
+		position: relative
+		&>img
+			position: relative
+			left: 50%
+			transform: translate(-50%, 0)
+			max-width: 1310px
+			width: 100%
+	.markers
+		&__item
+			position: absolute
+			z-index: 1
+			height: 26px
+			width: 18px
+			&.active
+				z-index: 5
+		&__hidden
+			background: url('../img/office.jpg') no-repeat center/cover #000
+			position: absolute
+			min-height: 266px
+			min-width: 553px
+			width: 100%
+			padding: 50px 0 30px 50px
+			left: -45px
+			top: 95%
+			display: none
+			&.active
+				display: block
+			.t-b
+				h5, p
+					color: #fff
+				h5
+					font-size: 21px
+				p
+					margin: 0
+				&:first-of-type
+					margin-bottom: 50px
+					h5
+						font-weight: 700
+						text-transform: uppercase
+						margin-bottom: 10px
+					p
+						max-width: 210px
+						font: 400 16px Ubuntu
+				&:last-of-type
+					position: relative
+					z-index: 2
+					max-width: 350px
+					h5
+						text-transform: none
+						font-weight: 500
+					p
+						font-size: 14px
+						font-weight: 300
 			img
-				position: relative
-				left: 50%
-				transform: translate(-50%,0)
+				position: absolute
+				max-width: 187px
+				max-height: 230px
+				height: 100%
+				bottom: 0
+				z-index: 1
+				right: 5px
 	.mob-tabs2
 		display: none
 		&-a
@@ -1116,6 +1740,8 @@ strong
 			display: none
 			&.active
 				display: block
+			h5, p, h4
+				color: #fff
 			img
 				position: absolute
 				max-width: 133px
@@ -1206,12 +1832,13 @@ strong
 	a
 		color: inherit
 		text-decoration: none
-	.col-3
+	.col-lg-3
 		&:nth-child(1)
 			img
 				width: 20px
-				height: 13px
+				height: 20px
 				margin-right: 13px
+				vertical-align: middle
 		&:not(:last-child)
 			.pre-footer-h
 				margin-bottom: 30px
@@ -1227,19 +1854,23 @@ strong
 				align-items: flex-end
 			.pre-footer-h
 				margin-bottom: 40px
+				text-align: right
 				span
 					margin-right: 13px
 					transform: rotate(-245deg)
 					font-size: 15px
-			img
+			.pre-footer-c
+				text-align: right
+			svg
+				height: 40px
+				width: auto
 				margin-bottom: 20px
 			p
-				text-align: right
 				color: #afafaf
 				max-width: 210px
 				font: 300 12px/21px Ubuntu
 				&:first-of-type
-					margin-bottom: 60px
+					margin-bottom: 40px
 				&:nth-of-type(2)
 					margin-bottom: 10px
 	&-c
@@ -1256,32 +1887,20 @@ strong
 	&-b
 		margin-bottom: 50px
 		position: relative
-	.col-2
-		&:nth-child(1)
-			img
-				left: 90px
-		&:nth-child(2), &:nth-child(3), &:nth-child(5), &:nth-child(8)
-			img
-				left: 100px
-		&:nth-child(4)
-			img
-				left: 131px
-		&:nth-child(6)
-			img
-				left: 114px
-		&:nth-child(7)
-			img
-				left: 120px
+	&-h
+		display: flex
+		flex-flow: row nowrap
+		align-items: center
 	h6
 		font: 700 16px/24px Ubuntu
 		letter-spacing: 0.8px
 		text-transform: uppercase
+		margin-right: 25px
 	p
 		font: 300 14px/24px Ubuntu
 	img
-		position: absolute
-		top: 5px
-		left: 100px
+		width: 28px
+		height: 22px
 
 .socials
 	display: flex
@@ -1290,6 +1909,7 @@ strong
 	max-width: 167px
 	width: 100%
 	margin-bottom: 55px
+	margin-left: auto
 	.fab
 		color: #032632
 		display: flex
@@ -1314,12 +1934,14 @@ strong
 	&.active
 		display: flex
 	.free-c
-		background: url('../img/phonec.png') no-repeat top right #3468e8
+		background: url('../img/phonec.png') no-repeat top right #002632
 		color: #fff
-		display: flex
+		display: none
 		flex-flow: column nowrap
 		padding: 60px 50px
 		position: relative
+		&.active
+			display: flex
 		h4
 			font: 700 24px/30px Ubuntu
 			max-width: 265px
@@ -1373,5 +1995,1551 @@ strong
 				transform: rotate(45deg)
 			&:after
 				transform: rotate(-45deg)
+
+//Uslugi
+.benefits
+	padding: 65px 0 80px
+	h2
+		margin-bottom: 20px
+	p
+		color: #676f7a
+		font: 300 16px/24px Ubuntu
+	.row
+		&:first-child
+			margin-bottom: 35px
+		&:nth-child(2)
+			margin-bottom: 45px
+			.col-md-6
+					&:not(:last-child)
+						margin-bottom: 25px
+		p
+			color: #1f1f1f
+			font: 300 18px/30px Ubuntu
+			letter-spacing: .5px
+		span
+			color: #71b023
+			margin-right: 5px
+	figure
+		text-align: center
+		img
+			margin-bottom: 30px
+			width: 100%
+		span
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				display: block
+				top: 0
+				left: -29px
+				width: 19px
+				height: 19px
+				background-color: #5fbbf0
+			&:first-child
+				margin-right: 70px
+				&:before
+					background-color: #0068ec
+
+.cond
+	padding: 60px 0 70px
+	background: #ecf1f4
+	.row
+		&:first-child
+			margin-bottom: 70px
+	h2
+		margin-bottom: 20px
+	p
+		color: #676f7a
+		font: 300 16px/24px Ubuntu
+	&-l
+		li
+			&:not(:last-child)
+				margin-bottom: 20px
+		p
+			color: #1f1f1f
+			font: 300 16px/24px Ubuntu
+			position: relative
+			&:before
+				content: '•'
+				color: #2d5acc
+				position: relative
+				left: -2px
+	.t-c
+		border-radius: 3px
+		background-color: #dae3f3
+		padding: 45px 85px 55px 50px
+		h4
+			color: #3468e8
+			font: 700 18px/24px Ubuntu
+			letter-spacing: 0.9px
+			margin-bottom: 25px
+
+.inv
+	padding: 65px 0 30px
+	h2
+		margin-bottom: 25px
+	p
+		margin-bottom: 50px
+		color: #676f7a
+		font: 300 16px/24px Ubuntu
+	h4
+		color: #3468e8
+		font: 700 22px/24px Ubuntu
+		margin-bottom: 25px
+	.t-b
+		border-radius: 3px
+		border: 1px solid #ecf1f4
+		display: -webkit-flex
+		min-height: 100%
+		display: flex
+		flex-flow: column nowrap
+		&__h
+			padding: 35px 25px 75px 35px
+			p
+				color: #676f7a
+				font: 300 14px/24px Ubuntu
+				margin-bottom: 0
+				&:not(:last-of-type)
+					margin-bottom: 25px
+		&__f
+			padding: 25px 48px 40px 35px
+			position: relative
+			margin-top: auto
+			p
+				margin-bottom: 0
+				color: #ffffff
+				font: 700 16px/24px Ubuntu
+				position: relative
+			&:before
+				content: ""
+				width: 100%
+				height: 100%
+				display: block
+				position: absolute
+				background-color: rgba(0,38,50,.82)
+				top: 0
+				left: 0
+
+.cost
+	background: url('../img/planetbg.png') no-repeat center #ecf1f4
+	padding: 65px 0 60px
+	.row
+		&:first-child
+			margin-bottom: 65px
+	h2
+		margin-bottom: 25px
+	p
+		color: #676f7a
+		font: 300 16px/24px Ubuntu
+	.frm
+		p, label
+			color: #676f7a
+			font: 700 14px/16px Ubuntu
+		p
+			margin-bottom: 8px
+		select
+			max-width: 360px
+			width: 100%
+			border: 1px solid #cbcdd0
+			padding: 12px 0 12px 18px
+			color: #676f7a
+			font: 300 14px/24px Ubuntu
+			margin-bottom: 15px
+		.radio-b
+			display: flex
+			flex-flow: row nowrap
+			margin-bottom: 30px
+			&1, &2
+				display: flex
+				flex-flow: column nowrap
+			&1
+				margin-right: 85px
+			label
+				display: flex
+				flex-flow: row nowrap
+				align-items: center
+				&:not(:last-of-type)
+					margin-bottom: 8px
+			input
+				margin-right: 8px
+		& > input
+			max-width: 360px
+			width: 100%
+			border: 1px solid #cbcdd0
+			padding: 12px 0 12px 18px
+			margin-bottom: 20px
+			&::placeholder
+				color: #676f7a
+				font: 300 14px/24px Ubuntu
+		button
+			maw-width: 359px
+			width: 100%
+			height: 50px
+			background-color: #fff45e
+			border: none
+			padding: 0
+			color: #1f1f1f
+			font: 700 14px Ubuntu
+			text-transform: uppercase
+			letter-spacing: 2.8px
+	.img-c
+		position: relative
+		img
+			position: absolute
+			left: 0
+			top: -40px
+
+.real
+	background: url('../img/realbg.jpg') no-repeat center #000
+	padding: 55px 0 70px
+	h2
+		margin-bottom: 30px
+	p
+		font: 300 16px/24px Ubuntu
+		margin-bottom: 40px
+	p, h2
+		color: #ffffff
+
+.wus
+	padding: 20px 0 70px
+	h2
+		margin-bottom: 20px
+	p
+		color: #676f7a
+		font: 300 16px/24px Ubuntu
+		&:last-child
+			margin-bottom: 40px
+
+.facts
+	padding: 55px 0 100px
+	h2
+		margin-bottom: 15px
+	p
+		color: #676f7a
+		font: 300 16px/24px Ubuntu
+	.row
+		&:first-child
+			margin-bottom: 40px
+	&-t
+		h4
+			color: #2d5acc
+			font: 700 19px/24px Ubuntu
+			position: relative
+			&:after, &:before
+				content: ''
+				display: block
+				position: absolute
+				background-color: #002632
+				opacity: 0.36
+				top: 50%
+				transform: translate(0, -50%)
+			&:before
+				right: -32px
+				width: 30px
+				height: 3px
+			&:after
+				right: -18px
+				height: 30px
+				width: 3px
+			&.active
+				margin-bottom: 30px
+				&:after
+					display: none
+		p
+			color: #1f1f1f
+			font: 300 14px/24px Ubuntu
+		&__i
+			cursor: pointer
+			padding-right: 50px
+			padding-left: 30px
+			&:not(:last-child)
+				margin-bottom: 23px
+			&.active
+				border: 1px solid #e0e2e3
+				background-color: #ffffff
+				padding-top: 25px
+				padding-bottom: 40px
+		&__c
+			display: none
+			&.active
+				display: block
+
+//blog
+.blog
+	.swiper-slide
+		height: auto
+		&[data-swiper-row="0"]
+			margin-bottom: 25px
+	padding: 60px 0 90px
+	.row
+		&:nth-child(2)
+			h2
+				margin-bottom: 35px
+	&-c
+		display: flex
+		flex-flow: row nowrap
+		&:not(:last-child)
+			margin-bottom: 30px
+		&__img
+			margin-right: 30px
+			flex: 0 0 360px
+			img
+				width: 100%
+		&__t
+			margin-top: -7px
+			time, p
+				opacity: 0.5
+				color: #101010
+				font: 300 13px/24px Ubuntu
+			time
+				display: inline-block
+				margin-bottom: 15px
+			p
+				margin-bottom: 30px
+			h5
+				color: #000000
+				font: 700 18px/24px Ubuntu
+				margin-bottom: 15px
+			.info-data
+				display: flex
+				flex-flow: row nowrap
+				align-items: center
+				.author
+					color: #3468e8
+					font: 700 13px/24px Ubuntu
+					margin-right: 13px
+				.rating
+					margin-right: 40px
+					.star-result, .count
+						display: none
+				.view-count
+					opacity: 0.5
+					color: #101010
+					font: 300 12px/24px Ubuntu
+					position: relative
+					&:before
+						content: "\f06e"
+						font: 400 12px Font Awesome\ 5 Free
+						margin-right: 2px
+	&-a
+		h3
+			color: #000000
+			font: 700 24px/30px Ubuntu
+			letter-spacing: 1.2px
+			margin-bottom: 12px
+		ul
+			background-color: #f1f5f9
+			margin-bottom: 30px
+			li
+				&:not(:last-child)
+					border-bottom: 1px solid rgba(0, 0, 0, .06)
+			a
+				color: #000000
+				font: 700 12px/18px Ubuntu
+				text-transform: uppercase
+				letter-spacing: 1.2px
+				display: block
+				max-width: 185px
+				height: 100%
+				padding: 15px 0 15px 30px
+				transition: all .3s
+				position: relative
+				&::before
+					content: ''
+					width: 3px
+					height: 0
+					position: absolute
+					left: 0
+					top: 0
+					display: block
+					background: #3468e8
+					transition: all .5s
+				&:hover
+					color: #3468e8
+				&:hover::after
+					right: 100%
+				&.active
+					color: #3468e8
+					&:before
+						height: 100%
+					&:after
+						display: none
+		&__adv
+			position: relative
+			z-index: 1
+			border: 8px solid #3468e8
+			background-color: #002632
+			padding: 35px 0
+			display: flex
+			flex-flow: column nowrap
+			justify-content: center
+			text-align: center
+			img
+				position: absolute
+				z-index: -1
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+			h3
+				color: #ffffff
+				font: 700 24px/30px Ubuntu
+				text-transform: uppercase
+				letter-spacing: 2.4px
+				margin-bottom: 15px
+			p
+				color: #ffffff
+				font: 300 14px/18px Ubuntu
+				margin-bottom: 40px
+			a
+				margin: 0 auto
+
+.b-blog
+	&-soc
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		margin-bottom: 35px
+		&1
+			color: #6d7580
+			font: 400 13px/24px Ubuntu
+			strong
+				color: #6d7580
+				text-decoration: underline
+				font-weight: 700
+		&2
+			display: flex
+			flex-flow: row nowrap
+			align-items: center
+			span
+				color: #3468e8
+				font-size: 14px
+				line-height: 24px
+				font-weight: 300
+				margin-right: 20px
+			a
+				width: 35px
+				height: 35px
+				border: 1px solid #3468e8
+				border-radius: 50%
+				display: flex
+				flex-flow: row nowrap
+				align-items: center
+				justify-content: center
+				&:not(:last-child)
+					margin-right: 10px
+	&-e
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		align-items: center
+		padding: 5px 0
+		border-top: 1px solid rgba(0, 0, 0, .1)
+		border-bottom: 1px solid rgba(0, 0, 0, .1)
+		margin-bottom: 50px
+		span
+			color: #676f7a
+			font-size: 13px
+			line-height: 30px
+			font-weight: 300
+			strong
+				color: #676f7a
+				font-weight: 700
+		&2
+			span
+				margin-right: 20px
+	&-adv
+		margin-bottom: 30px
+		position: relative
+		&1
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-around
+			align-items: center
+			min-height: 180px
+			background: url('../img/bgggg2.png') no-repeat center/cover
+			overflow: hidden
+			&:not(:last-child)
+				margin-bottom: 20px
+			img
+				max-width: 140px
+				position: relative
+				top: 5px
+			&:nth-of-type(2)
+				background: url('../img/bgggg.png') no-repeat center/cover
+			h4
+				color: #ffffff
+				font: 700 24px/30px Ubuntu
+				max-width: 295px
+	.soc-rating
+		padding-top: 20px
+		border-top: 1px solid rgba(0,0,0, .1)
+		margin-bottom: 40px
+		&-h
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			align-items: flex-start
+			margin-bottom: 5px
+			.info-data
+				display: flex
+				flex-flow: row nowrap
+				.author
+					margin-right: 10px
+			.info-text
+				max-width: 360px
+				p
+					text-indent: 50px
+					text-align: right
+					color: #676f7a
+					font: 300 12px/16px Ubuntu
+		.b-blog-soc2
+			span
+				color: #676f7a
+				font: 700 14px/24px Ubuntu
+				margin-right: 8px
+	.main-content-article
+		padding-top: 50px
+		.dataTables_wrapper
+			margin-bottom: 100px
+			overflow-x: auto
+			overflow-y: hidden
+		.tablepress
+			border-bottom: 1px solid #f1f5f9
+			margin-bottom: 20px
+			thead
+				th
+					vertical-align: middle
+					padding: 20px
+					background: #3468e8
+					color: #ffffff
+					font: 700 12px Ubuntu
+					text-transform: uppercase
+					letter-spacing: 1.2px
+					text-align: center
+					&:not(:last-child)
+						border-right: 1px solid #f1f5f9
+			tbody
+				td
+					border: none
+					color: #676f7a
+					font: 300 14px Ubuntu
+					text-align: center
+					padding: 20px
+					vertical-align: middle
+					&:not(:last-child)
+						border-right: 1px solid #f1f5f9
+				.odd
+					td
+						background-color: rgba(241, 245, 249, 0.59)
+		iframe
+			margin: 0 auto
+			max-width: 684px
+			width: 100%
+			height: 381px
+			display: block
+			margin-bottom: 50px
+		p, ul
+			color: #676f7a
+			font: 300 16px/30px Ubuntu
+		p, ul
+			margin-bottom: 25px
+		ol
+			margin-bottom: 40px
+			counter-reset: c
+			li
+				color: #676f7a
+				font: 300 16px/30px Ubuntu
+				position: relative
+				counter-increment: c
+				padding-left: 58px
+				&:not(:last-child)
+					margin-bottom: 20px
+				&:before
+					content: counter(c)
+					margin-right: 20px
+					position: absolute
+					left: -4px
+					display: inline-block
+					width: 34px
+					height: 30px
+					background-color: #3468e8
+					transform: skewX(-15deg)
+					vertical-align: middle
+					color: #ffffff
+					font: 700 17px Ubuntu
+					text-align: center
+					line-height: 25px
+		ul
+			padding-left: 27px
+			li
+				position: relative
+				&:not(:last-child)
+					margin-bottom: 10px
+				&:before
+					content: '•'
+					color: #3468e8
+					margin-right: 3px
+		h2
+			text-align: center
+			margin-bottom: 15px
+		img
+			width: 100%
+			margin-bottom: 30px
+		blockquote
+			padding: 4% 17% 4% 65px
+			background: rgba(241, 245, 249, 0.59)
+			position: relative
+			margin: 40px 0
+			&::before, &::after
+				content: ''
+				display: block
+				position: absolute
+				width: 54px
+				height: 49px
+				background: url('../img/quote.png') no-repeat center transparent
+			&::before
+				top: -25px
+				left: -33px
+			&::after
+				bottom: -23px
+				right: 0
+				transform: rotate(180deg)
+			p
+				color: #676f7a
+				font: 700 16px/30px Ubuntu
+				margin: 0
+			cite
+				color: #676f7a
+				font: 300 16px Ubuntu
+				position: absolute
+				right: 75px
+				bottom: 10px
+
+.s-art
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	flex-flow: column nowrap
+	height: 100%
+	time
+		display: inline-block
+		opacity: 0.5
+		color: #101010
+		font: 300 14px/15px Ubuntu
+		margin-bottom: 8px
+	h5
+		color: #2d5acc
+		font: 700 18px/30px Ubuntu
+		margin-bottom: 10px
+	img
+		width: 92%
+		margin-bottom: 20px
+		min-height: 216px
+	.view-count
+		margin-bottom: 30px
+	.btn
+		margin-top: auto
+
+.view-count
+	opacity: 0.5
+	color: #101010
+	font: 300 12px/24px Ubuntu
+	&:before
+		content: '\f06e'
+		font: 400 12px 'Font Awesome 5 Free'
+
+.rubric
+	margin-bottom: 30px
+	position: relative
+	z-index: 5
+	&-a
+		border: 1px solid #ecf1f4
+		background-color: #ffffff
+		color: #676f7a
+		font: 300 14px/24px Ubuntu
+		padding: 10px 0 10px 15px
+		position: relative
+		cursor: pointer
+		&:after
+			content: '\f107'
+			position: absolute
+			top: 50%
+			transform: translate(0, -50%)
+			right: 20px
+			color: #676f7a
+			font: 900 14px "Font Awesome 5 Free"
+	&-h
+		color: #676f7a
+		font: 300 14px/48px Ubuntu
+		flex-flow: row wrap
+		padding: 0 70px 20px 35px
+		cursor: pointer
+		display: none
+		box-shadow: 0 10px 35px rgba(165, 168, 170, 0.25)
+		border: 1px solid #ecf1f4
+		background-color: #ffffff
+		position: absolute
+		top: 100%
+		left: 0
+		&.active
+			display: flex
+		&__i
+			flex: 0 1 33%
+		a
+			transition: all .3s
+			&:hover
+				color: #000 !important
+
+.build
+	padding: 60px 0 150px
+	.row
+		&:nth-child(2)
+			margin-bottom: 20px
+			.col-md-6
+				&:not(:last-child)
+					margin-bottom: 30px
+	&-nav
+		display: flex
+		flex-flow: row nowrap
+		justify-content: center
+		margin-bottom: 65px
+		&__i
+			a
+				color: #000000
+				font: 700 13px/30px Ubuntu
+				text-transform: uppercase
+				position: relative
+				letter-spacing: 1.2px
+				&:before
+					content: ''
+					position: absolute
+					left: 0
+					bottom: -20px
+					height: 2px
+					background-color: #ecf1f4
+					width: 0
+					transition: all .5s
+				&.active
+					&:before
+						width: 100%
+						display: block
+						background-color: #2d5acc
+			&:not(:last-child)
+				margin-right: 40px
+	&-b
+		position: relative
+		display: flex
+		flex-flow: row nowrap
+		justify-content: center
+		align-items: center
+		background: url('../img/b2.jpg') no-repeat center/cover #000
+		min-height: 300px
+		overflow: hidden
+		&:hover &__h
+			top: 0
+		&__h
+			display: flex
+			flex-flow: column nowrap
+			justify-content: center
+			align-items: center
+			position: absolute
+			top: -100%
+			height: 100%
+			width: 100%
+			z-index: 2
+			background-color: rgba(0, 38, 50, 0.9)
+			border: 5px solid #3468e8
+			transition: all .5s
+			img
+				max-width: 106px
+				margin-bottom: 20px
+			p
+				color: #ffffff
+				font: 300 13px/20px Ubuntu
+				text-align: center
+				max-width: 388px
+				margin-bottom: 20px
+
+.numb
+	background: #f1f5f9
+	padding: 50px 0
+	.row
+		&:nth-child(1)
+			margin-bottom: 35px
+		&:nth-child(2)
+			.col-md-3
+				&:nth-child(2)
+					li
+						&:first-child
+							a
+								&:not(:last-child)
+									margin-right: 20px
+								&:nth-child(1)
+									color: #7d3daf
+								&:nth-child(2)
+									color: #47b0d3
+								&:nth-child(3)
+									color: #0382f9
+								&:nth-child(4)
+									color: #55cd6c
+								span
+									font-size: 22px
+				&:nth-child(3)
+					li
+						display: flex
+						flex-flow: row nowrap
+						align-items: center
+						span
+							margin-right: 10px
+							color: #00aff0
+							font-size: 22px
+						a
+							text-transform: none
+	h2
+		margin-bottom: 15px
+	p
+		color: #676f7a
+		font: 300 16px/24px Ubuntu
+	strong
+		color: #676f7a
+	.pre-footer-c
+		img
+			width: 20px
+			height: 13px
+		a
+			color: #3468e8
+			font: 700 18px/36px Ubuntu
+			letter-spacing: 0.9px
+
+.info
+	padding: 65px 0 85px
+	h2
+		margin-bottom: 25px
+	.row
+		&:nth-child(2)
+			p
+				color: #676f7a
+				font: 300 16px/30px Ubuntu
+				&:first-of-type
+					font-weight: 700
+					margin-bottom: 30px
+				&:last-of-type
+					margin-bottom: 45px
+	&-b
+		display: flex
+		flex-flow: row nowrap
+		justify-content: flex-start
+		align-items: center
+		background: #ecf1f4
+		padding: 25px 40px
+		&__t, &__r
+			color: #676f7a
+			font: 300 13px/30px Ubuntu
+			strong
+				color: #676f7a
+		&__t
+			margin-right: 80px
+			position: relative
+			&:before
+				content: "\f017"
+				font-family: "Font Awesome 5 Free"
+				font-size: 13px
+				color: #97a8ae
+				margin-right: 10px
+		&__r
+			margin-right: 15px
+		&__b
+			display: flex
+			flex-flow: row nowrap
+			a
+				flex: 0 0 auto
+				&:first-child
+					margin-right: 15px
+
+.case-internal
+	.row
+		&:nth-child(2)
+			p
+				&:nth-of-type(n)
+					margin-bottom: 30px
+
+.divider
+	background: url('../img/arrow.png') no-repeat 22% 50% #3468e8
+	padding: 25px 0
+	h4
+		margin-bottom: 12px
+	h4, p
+		color: #ffffff
+	h4
+		font: 700 24px/24px Ubuntu
+		letter-spacing: 1.2px
+		text-transform: uppercase
+	p
+		max-width: 482px
+		width: 100%
+		font: 300 18px/24px Ubuntu
+		em
+			color: #aec5ea
+			font: 300 13px/24px Ubuntu
+	&-b
+		position: absolute
+		top: 50%
+		right: 0
+		transform: translate(0, -50%)
+		a
+			display: inline-block
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				width: 100px
+				height: 121px
+				display: block
+				background: url('../img/zoom.png') no-repeat
+			&:not(:last-child)
+				margin-right: 20px
+		img
+			width: 100px
+
+.stage
+	background: #ecf1f4
+	padding: 90px 0 123px
+	h4
+		color: #676f7a
+		font: 300 24px/24px Ubuntu
+		margin-bottom: 10px
+	h3
+		color: #1f1f1f
+		font: 300 30px/36px Ubuntu
+		margin-bottom: 30px
+	&-alert
+		padding: 45px 75px 65px 165px
+		background: url('../img/alr.png') no-repeat left #fff
+		border-radius: 3px
+		border: 1px solid #e0e2e3
+		background-color: #ffffff
+		h4
+			color: #ff975e
+			font: 700 20px/24px Ubuntu
+			text-transform: uppercase
+			margin-bottom: 15px
+		p
+			font: 300 14px/24px Ubuntu
+			&:not(:last-child)
+				margin-bottom: 15px
+			strong
+				color: #1f1f1f
+				font: 500 16px/24px Ubuntu
+				margin-bottom: 7px
+	&-doc
+		padding: 40px 0 35px 35px
+		border-radius: 3px
+		border: 1px solid #e0e2e3
+		background-color: #ffffff
+		background: url('../img/tasks.png') no-repeat right 40px #fff
+		h4
+			color: #3468e8
+			font: 700 20px/24px Ubuntu
+			margin-bottom: 20px
+		p
+			color: #1f1f1f
+			font: 300 14px/24px Ubuntu
+			margin-bottom: 22px
+		&-drop
+			display: inline-block
+			padding: 10px 30px 10px 30px
+			color: #1f1f1f
+			font: 700 12px/12px Ubuntu
+			text-transform: uppercase
+			letter-spacing: 1.2px
+			background: #ecf1f4
+			cursor: pointer
+			position: relative
+			&-hidden
+				background: #ecf1f4
+				position: absolute
+				top: 100%
+				left: 0
+				padding: 10px 10px 10px 30px
+				width: 100%
+				z-index: 5
+				display: none
+				&.active
+					display: block
+				li
+					&:not(:last-child)
+						margin-bottom: 10px
+	&-costs
+		background: url('../img/doll.png') no-repeat right bottom #fff
+		padding: 40px 259px 40px 40px
+		border-radius: 3px
+		border: 1px solid #e0e2e3
+		h4
+			color: #3468e8
+			font: 700 20px/24px Ubuntu
+			margin-bottom: 15px
+		p
+			color: #1f1f1f
+			font: 300 14px/24px Ubuntu
+			&:nth-of-type(1)
+				font-size: 18px
+			&:nth-of-type(3)
+				margin-bottom: 25px
+			&:last-of-type
+				margin-bottom: 5px
+		ul
+			color: #1f1f1f
+			font: 300 14px/30px Ubuntu
+			li
+				position: relative
+				&:before
+					content: '•'
+					margin-right: 10px
+					color: #3468e8
+	&1, &2, &3, &4, &5, &6, &7
+		.row
+			// &:nth-child(1)
+			// 	margin-bottom: 35px
+			// &:nth-child(2)
+			// 	margin-bottom: 20px
+			&:not(:last-of-type)
+				margin-bottom: 30px
+	&2, &3, &4, &5, &6, &7
+		.row
+			&:nth-child(3)
+				margin-bottom: 50px
+			&:nth-child(4)
+				margin-bottom: 30px
+	&2, &4, &7, &8
+		background: #fff
+	&8
+		padding: 45px 0 110px
+		.row
+			&:nth-child(1)
+				margin-bottom: 45px
+			&:nth-child(2)
+				margin-bottom: 50px
+		iframe
+			height: 381px
+			width: 100%
+			display: block
+	.popular-b
+		margin-bottom: 15px
+	.mob-c-1
+		.owl-dots
+			text-align: center
+		button
+			width: 10px
+			height: 10px
+			background-color: #4569d0
+			border-radius: 50%
+			opacity: .5
+			&:not(:last-child)
+				margin-right: 10px
+			&.active
+				opacity: 1
+
+.steps
+	padding: 120px 0 75px
+	h2
+		color: #1f1f1f
+		font: 300 36px/36px Ubuntu
+		margin-bottom: 50px
+	&-b
+		h4
+			color: #71b023
+			font: 700 18px/24px Ubuntu
+			letter-spacing: 0.9px
+			text-transform: uppercase
+			margin-bottom: 15px
+		p
+			color: #1f1f1f
+			font: 300 14px/24px Ubuntu
+		&__i
+			position: relative
+			&:not(:last-child)
+				margin-bottom: 30px
+			.count-steps
+				position: absolute
+				color: #dae3e8
+				font: 700 72px/70px Ubuntu
+				letter-spacing: -3.6px
+				top: -5px
+				left: -95px
+		&__a
+			border-radius: 3px
+			background-color: #f1f7e9
+			padding: 25px 40px 25px 30px
+			margin-top: 30px
+
+.key
+	padding: 70px 0
+	background: #3468e8
+	.row
+		&:nth-child(2)
+			margin-bottom: 35px
+	h2
+		margin-bottom: 40px
+	h2, p
+		color: #fff
+	p
+		position: relative
+		color: #ffffff
+		font: 300 18px/30px Ubuntu
+		&:before
+			content: '\f00c'
+			color: #71b023
+			font: 900 18px "Font Awesome 5 Free"
+			margin-right: 5px
+
+.conc
+	background: url('../img/planetbg.png') no-repeat 50% 202px #fff
+	padding: 75px 0 40px
+	h2
+		color: #1f1f1f
+		font: 300 36px/36px Ubuntu
+		margin-bottom: 14px
+	p
+		color: #676f7a
+		font: 400 16px/24px Ubuntu
+	.row
+		&:nth-child(1)
+			margin-bottom: 50px
+		&:nth-child(2)
+			margin-bottom: 50px
+	img
+		width: 100%
+	&-b
+		&__i
+			position: relative
+			.count-steps
+				position: absolute
+				top: -5px
+				left: -95px
+				color: #dae3e8
+				font: 700 72px/70px Ubuntu
+				letter-spacing: -3.6px
+			&:not(:last-child)
+				margin-bottom: 15px
+		p
+			color: #1f1f1f
+			font: 300 14px/24px Ubuntu
+			margin-bottom: 25px
+	.benefits-l
+		margin-bottom: 30px
+		span
+			margin-right: 5px
+			color: #71b023
+
+.pagination
+	flex-flow: row nowrap
+	justify-content: center
+	color: #000000
+	font: 700 16px/30px Ubuntu
+	text-transform: uppercase
+	letter-spacing: 1.6px
+	a
+		color: inherit
+	.current
+		color: #2d5acc
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			bottom: -15px
+			display: block
+			width: 21px
+			height: 3px
+			background-color: #3468e8
+	.page-numbers
+		&:not(:last-child)
+			margin-right: 35px
+
+.title-rating
+	color: #676f7a
+	font: 700 14px/24px Ubuntu
+	margin-right: 10px
+
+.star-result, .count
+	color: #676f7a
+	font: 300 12px/16px Ubuntu
+
+.description, .rating-form-474-1, p.mr label.description
+	margin: 0
+
+.btn-vote
+	max-width: 160px
+	width: 100%
+	height: 30px
+	font: 700 13px/25px Ubuntu
+	text-transform: uppercase
+	border: none
+	cursor: pointer
+	background: #fff45e
+
+.form-vote.hidden
+	display: none
+
+.vote-post
+	margin-bottom: 15px
+
+.single-case
+	.popular-b
+		h6
+			min-height: auto
+
+.reviews
+	padding: 70px 0 170px
+	&-b
+		&__i
+			display: flex
+			flex-flow: row nowrap
+			&:not(:last-child)
+				margin-bottom: 70px
+		&__img
+			margin-right: 30px
+			border-radius: 50%
+			overflow: hidden
+			flex: 0 0 162px
+			height: 162px
+			margin-right: 30px
+			img
+				height: auto
+				width: 100%
+		&__h
+			display: flex
+			flex-flow: row nowrap
+			justify-content: space-between
+			margin-bottom: 10px
+		&__loc
+			display: flex
+			flex-flow: row nowrap
+			align-items: center
+			background: #ecf1f4
+			padding: 10px 22px
+			a
+				color: #000000 !important
+				font: 400 11px Ubuntu !important
+				text-decoration: none !important
+				text-transform: uppercase
+				letter-spacing: 0.55px
+				transition: all .3s
+				&:hover
+					color: #3468e9 !important
+		&__wrap
+			max-height: 297px
+			overflow: hidden
+			transition: max-height .5s
+			&.active
+				max-height: 100%
+	h2
+		margin-bottom: 40px
+	h4
+		color: #3468e9
+		font: 700 18px/30px Ubuntu
+		text-transform: uppercase
+		letter-spacing: 0.9px
+	p
+		color: #1f1f1f
+		font: 300 14px/24px Ubuntu
+		margin-bottom: 10px
+		&:nth-of-type(1)
+			margin-bottom: 40px
+			max-width: 390px
+	a
+		color: #3468e9
+		font: 700 14px/24px Ubuntu
+		text-decoration: underline
+		text-decoration-style: dotted
+
+.story
+	padding: 90px 0 60px
+	background: url('../img/storybg.png') no-repeat left bottom #fff
+	.row
+		&:nth-child(2)
+			.col-lg-5
+				.story-t
+					padding-top: 50px
+	&-t
+		padding-top: 20px
+		h3
+			color: #1f1f1f
+			font: 700 24px/36px Ubuntu
+			max-width: 365px
+			margin-bottom: 10px
+		h4
+			color: #3468e9
+			font: 700 18px/30px Ubuntu
+			text-transform: uppercase
+			letter-spacing: 0.9px
+			margin-bottom: 25px
+		h5
+			color: #3468e9
+			font: 700 22px/30px Ubuntu
+			margin-bottom: 10px
+		h6, span
+			color: #3468e9
+			font: 700 14px/24px Ubuntu
+		span
+			color: #1f1f1f
+			font-weight: 400
+		ul
+			color: #1f1f1f
+			font: 300 16px/24px Ubuntu
+			padding-left: 30px
+			li
+				position: relative
+				&:not(:last-child)
+					margin-bottom: 10px
+				&:before
+					content: '•'
+					color: #3468e9
+					margin-right: 10px
+		p
+			color: #1f1f1f
+			font: 300 16px/30px Ubuntu
+			&:not(:last-child)
+				margin-bottom: 35px
+		&__p
+			p
+				font: 700 14px/24px Ubuntu
+	&-img
+		text-align: center
+		position: relative
+		&-t
+			text-align: left
+			padding: 17px 35px 17px 30px
+			position: absolute
+			bottom: 55px
+			left: -30px
+			box-shadow: 16px 20px 40px rgba(0, 43, 149, 0.58)
+			background-color: #3468e9
+		h4
+			color: #ffffff
+			font: 700 18px Ubuntu
+			text-transform: uppercase
+			letter-spacing: 0.9px
+			margin-bottom: 10px
+		p
+			color: #ffffff
+			font: 400 14px Ubuntu
+		img
+			box-shadow: 0 25px 35px rgba(165, 168, 170, 0.45)
+			width: 100%
+
+.conf
+	.row
+		&:nth-child(1)
+			margin-bottom: 45px
+	h2
+		margin-bottom: 15px
+	p
+		color: #676f7a
+		font: 300 16px/24px Ubuntu
+	&-item
+		img
+			max-width: 173px
+			width: 100%
+			margin: 0 auto 20px
+		p
+			color: #010101
+			font: 700 16px/24px Ubuntu
+			max-width: 200px
+			margin: 0 auto
+			text-align: center
+
+.comp
+	&-h
+		background: #fff
+		padding: 40px 0 30px
+		h4
+			color: #000
+			font: 300 24px Ubuntu
+			margin-bottom: 20px
+		p
+			opacity: 0.5
+			color: #000
+			font: 300 14px/24px Ubuntu
+			position: relative
+			&::before
+				content: '\276F'
+				position: absolute
+				left: 50%
+				bottom: -20px
+				transform: translate(-50%, 0) rotate(90deg)
+		&-rub
+			margin: 0 auto
+			max-width: 1140px
+			width: 100%
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			margin-bottom: 24px
+			border-bottom: 1px solid #000
+			&__i
+				flex: 0 1 20%
+				text-align: center
+				position: relative
+				z-index: 2
+				& > a
+					color: #000
+					font: 700 13px/18px Ubuntu
+					text-transform: uppercase
+					letter-spacing: 1.3px
+					display: inline-block
+					max-width: 160px
+					padding-bottom: 20px
+					height: 100%
+					&:hover ~ ul
+						display: block
+			.childs-list
+				background-color: #3468e8
+				padding: 15px 20px
+				display: none
+				position: absolute
+				top: 99%
+				left: 0
+				right: 0
+				text-align: left
+				z-index: 2
+				&:hover
+					display: block
+				li
+					&:not(:last-child)
+						margin-bottom: 10px
+				a
+					color: #fff
+					font: 300 13px/18px Ubuntu
+					text-decoration: none
+					transition: all .3s
+					&:hover
+						color: #000
+	&-r
+		padding: 60px 0 170px
+		img
+			width: 100%
+
+.tb
+	select
+		width: 100%
+		height: 45px
+		opacity: 0.89
+		color: #333333
+		font: 300 12px/24px Ubuntu
+		padding-left: 15px
+	thead
+		tr
+			text-align: center
+			&:first-child
+				th
+					padding-bottom: 25px
+			&:last-child
+				height: 15px
+		a
+			box-shadow: 0 5px 15px rgba(165, 168, 170, 0.25)
+			border: 1px solid #e8e8e8
+			display: block
+			height: 50px
+			width: 80px
+			margin: 0 auto
+	tbody
+		.title-td
+			font-weight: 700 !important
+		tr
+			&:nth-last-child(2)
+				height: 15px
+			&:nth-last-child(3)
+				td
+					&:nth-child(n+3):nth-child(odd)
+						border-bottom: 1px solid #d0d9df
+						&.our-choose
+							border-bottom: 1px solid #7c94a5
+		td
+			color: #002632
+			font: 300 12px/48px Ubuntu
+			letter-spacing: 0.6px
+			text-align: center
+			&:first-child
+				color: #3468e8
+				font: 400 12px/48px Ubuntu
+				text-transform: uppercase
+				letter-spacing: 0.7px
+				text-align: right
+			&:not(:first-child)
+				background: #f3f6f7
+			&.tb-emp
+				width: 15px
+				background: #fff
+			&:not(.tb-name)
+				max-width: 200px
+	&-ltr
+		border-left: 1px solid #d0d9df
+		border-top: 1px solid #d0d9df
+		border-right: 1px solid #d0d9df
+	&-lbr
+		border-left: 1px solid #d0d9df
+		border-bottom: 1px solid #d0d9df
+		border-right: 1px solid #d0d9df
+	&-lr
+		border-left: 1px solid #d0d9df
+		border-right: 1px solid #d0d9df
+	.btn-blue
+		width: 100%
+
+.contents
+	.list-contents
+		padding: 30px 0
+		border-top: 1px solid rgba(0, 0, 0, .1)
+		border-bottom: 1px solid rgba(0, 0, 0, .1)
+		.head-div
+			color: #1f1f1f
+			font: 300 30px/36px Ubuntu
+			margin-bottom: 35px
+		.content-list-ul
+			span, a
+				font: 700 12px/38px Ubuntu
+				text-transform: uppercase
+				letter-spacing: 1.2px
+			span
+				color: #000000
+			a
+				color: #3468e8
+
+.cases-archive
+	.blog-c
+		.info-data
+			flex-flow: column nowrap
+			align-items: flex-start
+			p
+				width: 100%
+				display: flex
+				flex-flow: row nowrap
+				justify-content: flex-start
+				margin-bottom: 20px
+			strong
+				flex: 0 0 70px
+				margin-right: 40px
+				color: #000
+			span
+				flex: 0 1 auto
+
+#bs
+	padding-bottom: 35px
+
+#wk
+	padding-bottom: 0
+
+#after-serv
+	padding-top: 0
+
+.page-template-service-template
+	.work
+		padding: 60px 0 0
+
+
 
 @import "media"
